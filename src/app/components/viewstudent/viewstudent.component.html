@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div class="container col-md-8">
+      <div class="row">
+        <a href="http://localhost:4200/student/add" class="btn btn-secondary col-md-2" style="margin-left: 80px;">Ajouter Un Etudiant</a>
+        <a href="http://localhost:4200/subject/add" class="btn btn-success col-md-2" style="margin-left: 10px;">Ajouter Un Sujet</a>
+        <a href="http://localhost:4200/subject/all" class="btn btn-secondary col-md-2" style="margin-left: 10px;">Lister Les Sujets</a>
+        <a href="" class="btn btn-info col-md-2" style="margin-left: 10px;" >Shuffle</a>
+      </div>
+
+      <div class="row">
+        <div class="card">
+          <div class="card-header">
+                <h2 class="text-center">Liste des Etudiants</h2>
+          </div>
+          <div class="card-body">
+            <table class="table table-bordered" >
+              <thead>
+                <tr>
+                  <th scope="col" class="text-center">Nom</th>
+                  <th scope="col" class="text-center">Prenom</th>
+                  <th scope="col" class="text-center">Matricule</th>
+                  <th scope="col" class="text-center">Action</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let student of students">
+                  <td class="text-center">{{student.firstname}}</td>
+                  <td class="text-center">{{student.lastName}}</td>
+                  <td class="text-center">{{student.matricule}}</td>
+
+                  <td>
+                      <div class="d-inline mx-2">
+                          <button class="btn btn-warning" (click)="updateStudent(student.id)" type="button">Update</button>
+                      </div>
+                      <div class="d-inline">
+                        <button class="btn btn-danger" (click)="deleteStudent(student.id)" type="button">Delete</button>
+                      </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+           </div>
+  </div>
+      </div>
+    </div>
+</body>
+</html>
+<router-outlet></router-outlet>

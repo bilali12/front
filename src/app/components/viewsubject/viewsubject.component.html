@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+      <div class="container col-md-5">
+        <a href="http://localhost:4200/" class="btn btn-info">Acceuil</a>
+            <div class="card">
+                <div class="card-header">
+                    <h2>Liste des Sujets</h2>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="text-center">ID</th>
+                        <th scope="col" class="text-center">Theme(s)</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let subject of subjects">
+                                <td class="text-center">{{subject.id}}</td>
+                                <td class="text-center">{{subject.subjectName}}</td>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>
+            </div>
+      </div>
+</body>
+</html>

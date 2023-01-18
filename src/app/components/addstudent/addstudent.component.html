@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+      <div class="container col-md-4">
+            <a href="http://localhost:4200/" class="btn btn-info">Acceuil</a>
+            <div class="card">
+                <div class="card-header">
+                    <h2>Ajouter Un Etudiant</h2>
+                </div>
+                <div class="card-body">
+                  <form [formGroup]="form" (ngSubmit)="submit()">
+
+                    <div class="row">
+                      <div class="col-md-12 form-group mb-3">
+                        <label for="name" class="form-label">Nom</label>
+                        <input id="name"  formControlName="name" type="text" name="name" class="form-control" placeholder="Nom" required>
+                      </div>
+                    </div>
+
+
+
+                    <div class="row">
+                      <div class="col-md-12 form-group mb-3">
+                        <label for="pNo" class="form-label">Prenom</label>
+                        <input id="pNo" type="text" name="pNo"  formControlName="pNo" class="form-control" placeholder="Prenom" required>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12 form-group">
+                        <input [disabled]="!form.valid" class="btn btn-primary w-100" type="submit" value="Submit">
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+            </div>
+      </div>
+</body>
+</html>
